@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - SANIVARA</title>
+    <style>
+        /* Gaya umum */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #004AAD, #007BFF);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 320px;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Apakah Anda ingin Logout?</h2>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <footer>
+        SANIVARA | heri.idtech | ©2025 Hak Cipta.
+    </footer>
+
+    <script>
+        // Periksa apakah pengguna sudah login
+        if (!localStorage.getItem("loggedInUser")) {
+            window.location.href = "login.html"; // Redirect jika belum login
+        }
+
+        function logout() {
+            // Konfirmasi sebelum logout
+            if (confirm("Apakah Anda yakin ingin logout?")) {
+                // Hapus sesi pengguna dari localStorage
+                localStorage.removeItem("loggedInUser");
+
+                // Redirect ke halaman login
+                alert("Anda telah logout!");
+                window.location.href = "Http://sanivara.tilda.ws/homes4n1v4r4"; // Sesuaikan dengan halaman login Anda
+            }
+        }
+    </script>
+
+</body>
+</html>
